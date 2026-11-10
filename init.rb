@@ -1,0 +1,17 @@
+# frozen_string_literal: true
+
+Redmine::Plugin.register :redmine_issue_reaction_query do
+  name 'Redmine Issue Reaction Query'
+  author 'sk-ys'
+  description 'Adds a sortable "Reactions" column and filters (count / reacted by me) for issue reactions to the issue list'
+  version '0.1.0'
+  requires_redmine version_or_higher: '6.1.0'
+
+  project_module :issue_tracking do
+    permission :use_reaction_query, {}, read: true
+  end
+end
+
+unless IssueQuery.include?(RedmineIssueReactionQuery::IssueQueryPatch)
+  IssueQuery.prepend RedmineIssueReactionQuery::IssueQueryPatch
+end

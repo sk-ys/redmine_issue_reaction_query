@@ -1,0 +1,4 @@
+en:
+  label_reactions_count: Reactions
+  label_reacted_by: Reacted by
+  permission_use_reaction_query: Use reaction column and filters
