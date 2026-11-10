@@ -1,4 +1,4 @@
-# redmine_issue_reaction_query
+# Redmine Issue Reaction Query
 
 A Redmine plugin that makes issue reactions (introduced in Redmine 6.1) usable in the issue list. It adds a sortable column and two filters, controlled by a role permission.
 
