@@ -12,6 +12,11 @@ Redmine::Plugin.register :redmine_issue_reaction_query do
   end
 end
 
-unless IssueQuery.include?(RedmineIssueReactionQuery::IssueQueryPatch)
-  IssueQuery.prepend RedmineIssueReactionQuery::IssueQueryPatch
-end
+# unless IssueQuery.include?(RedmineIssueReactionQuery::IssueQueryPatch)
+#   IssueQuery.prepend RedmineIssueReactionQuery::IssueQueryPatch
+# end
+
+# The IssueQuery patch is applied from the after_plugins_loaded hook
+# (see lib/redmine_issue_reaction_query/hooks/model_hook.rb), not here.
+# Referencing the class loads it and registers the hook listener.
+RedmineIssueReactionQuery::Hooks::ModelHook
