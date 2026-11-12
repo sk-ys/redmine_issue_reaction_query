@@ -25,7 +25,7 @@ Only reactions on the issue itself are counted. Reactions on notes (journals) ar
 
 ## Installation
 
-1. Copy (or clone) this plugin into `plugins/redmine_issue_reaction_query` inside your Redmine installation.
+1. Copy (or clone) this plugin into `plugins/redmine_issue_reaction_query` inside your Redmine installation.  The directory name must be `redmine_issue_reaction_query`.
 
 2. Restart Redmine. (No database migration is required.)
 
@@ -60,8 +60,15 @@ The plugin defines one permission, **"Use reaction column and filters"** (`use_r
 
 ## Design notes
 
+- **Why is the patch applied in an `after_plugins_loaded` hook?**
+  Some plugins patch `IssueQuery` with `alias_method` chains from their own `after_plugins_loaded` hook. Prepending earlier, from `init.rb`, would make their alias capture this plugin's method and recurse infinitely. Hook listeners run in registration order and plugins load alphabetically, so this plugin's patch is applied after theirs.
+
 - **Why only `<< me >>` in "Reacted by"?**
   Letting users pick other users would allow searching for who reacted to what, bypassing the visibility rules of reactions. The filter therefore always uses the current user, regardless of the submitted value.
+
+## Known limitation
+
+A plugin whose name sorts after `redmine_issue_reaction_query` and that patches `IssueQuery` with `alias_method` from its own `after_plugins_loaded` hook can still conflict.
 
 ## Compatibility
 
@@ -69,4 +76,4 @@ Tested on Redmine 6.1 (column and filters). Not tested on 7.x.
 
 ## License
 
-Choose and add a license before publishing (Redmine itself is GPL v2).
+GNU General Public License v2.0 (GPL-2.0). See [LICENSE](LICENSE).
