@@ -1,4 +1,7 @@
 ja:
   label_reactions_count: リアクション数
   label_reacted_by: リアクションした人
-  permission_use_reaction_query: リアクションカラムとフィルタの使用
+  permission_use_reaction_query: リアクション列とフィルタの利用
+  label_reaction_query_header_display: リアクション列の見出し
+  label_reaction_query_header_icon: アイコン(いいね)
+  label_reaction_query_header_text: 文字列

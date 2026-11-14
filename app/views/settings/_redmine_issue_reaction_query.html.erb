@@ -1,0 +1,10 @@
+<p>
+  <label for="settings_header_display"><%= l(:label_reaction_query_header_display) %></label>
+  <%= select_tag 'settings[header_display]',
+                 options_for_select(
+                   [[l(:label_reaction_query_header_icon), 'icon'],
+                    [l(:label_reaction_query_header_text), 'text']],
+                   (settings || {})['header_display'].presence || 'icon'
+                 ),
+                 id: 'settings_header_display' %>
+</p>
