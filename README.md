@@ -11,6 +11,7 @@ Only reactions on the issue itself are counted. Reactions on notes (journals) ar
 - **Column: "Reactions"**
   - Shows the number of reactions on each issue.
   - Sortable by clicking the column header.
+  - The column header shows Redmine's thumbs-up icon or the text caption (configurable, see "Settings").
   - Can be used in the sort criteria of saved queries.
 - **Filter: "Reactions"** (count)
   - Operators: `is`, `>=`, `<=`, `between`, `any`, `none`.
@@ -50,6 +51,14 @@ The plugin defines one permission, **"Use reaction column and filters"** (`use_r
 - Open the issue list, then add **Reactions** to the columns in the Options section. Click the column header to sort.
 - Add the **Reactions** or **Reacted by** filter in the Filters section.
 - Save the query to keep the columns, filters, and sort order.
+
+## Settings
+
+Open **Administration > Plugins > Redmine Issue Reaction Query > Configure**.
+
+- **Reactions column header**: `Icon (thumbs-up)` (default) or `Text`.
+  - The icon is Redmine's own `thumb-up-filled` icon (the one used by the reaction button), rendered with `sprite_icon`. The caption text is kept for screen readers and the sort link tooltip.
+  - The setting takes effect immediately; no restart is required.
 
 ## Notes and limitations
 

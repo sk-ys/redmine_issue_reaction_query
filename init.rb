@@ -9,6 +9,9 @@ Redmine::Plugin.register :redmine_issue_reaction_query do
   author_url 'https://github.com/sk-ys'
   requires_redmine version_or_higher: '6.1.0'
 
+  settings default: { 'header_display' => 'icon' },
+           partial: 'settings/redmine_issue_reaction_query'
+
   project_module :issue_tracking do
     permission :use_reaction_query, {}, read: true
   end
@@ -18,7 +21,7 @@ end
 #   IssueQuery.prepend RedmineIssueReactionQuery::IssueQueryPatch
 # end
 
-# The IssueQuery patch is applied from the after_plugins_loaded hook
+# The IssueQuery / QueriesHelper patches are applied from the after_plugins_loaded hook
 # (see lib/redmine_issue_reaction_query/hooks/model_hook.rb), not here.
 # Referencing the class loads it and registers the hook listener.
 RedmineIssueReactionQuery::Hooks::ModelHook
