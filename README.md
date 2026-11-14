@@ -57,7 +57,7 @@ The plugin defines one permission, **"Use reaction column and filters"** (`use_r
 Open **Administration > Plugins > Redmine Issue Reaction Query > Configure**.
 
 - **Reactions column header**: `Icon (thumbs-up)` (default) or `Text`.
-  - The icon is Redmine's own `thumb-up-filled` icon (the one used by the reaction button), rendered with `sprite_icon`. The caption text is kept for screen readers and the sort link tooltip.
+  - The icon is Redmine's own `thumb-up` icon (the one used by the reaction button), rendered with `sprite_icon`. The caption text is kept for screen readers and the sort link tooltip.
   - The setting takes effect immediately; no restart is required.
 
 ## Notes and limitations

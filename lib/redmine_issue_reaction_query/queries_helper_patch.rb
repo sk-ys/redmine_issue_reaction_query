@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module RedmineIssueReactionQuery
-  # Shows Redmine's bundled "thumb-up-filled" icon instead of the caption in
+  # Shows Redmine's bundled "thumb-up" icon instead of the caption in
   # the header of the reactions column (plugin setting "Reactions column
   # header"). Only that column is affected; everything else goes to super.
   module QueriesHelperPatch
